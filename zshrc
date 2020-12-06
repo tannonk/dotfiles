@@ -1,8 +1,10 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/Applications/anaconda3/bin:$PATH
+export PYTHON_UTILS="$HOME/code/python/utils"
+export PATH="$PYTHON_UTILS:$PATH"
 
-# locale settings # 
+# locale settings #
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -20,9 +22,9 @@ export ZSH="/Users/tannon/.oh-my-zsh"
 ZSH_THEME=""
 
 fpath+=$HOME/.oh-my-zsh/custom/themes/pure
-autoload -U promptinit; promptinit
+autoload -U promptinit
+promptinit
 prompt pure
-
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -113,7 +115,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 source ~/.aliases
-source ~/.bash_profile
+# source ~/.bash_profile
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -132,3 +134,7 @@ source ~/.bash_profile
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# the fuck tool -> https://github.com/nvbn/thefuck
+# corrects misspelled commands
+eval $(thefuck --alias)

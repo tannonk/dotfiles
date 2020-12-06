@@ -1,0 +1,98 @@
+#####################
+## Alias definitions
+#####################
+
+# -------------
+# server logins 
+# -------------
+alias midgard="mosh kew@midgard.ifi.uzh.ch"
+alias ildpt="ssh ildp_00@r2d2.cl.uzh.ch" # no mosh on r2d2
+alias ildps="ssh ildp_01@r2d2.cl.uzh.ch" # no mosh on r2d2
+alias mltat="ssh mlta_00@r2d2.cl.uzh.ch" # no mosh on r2d2
+# alias mltas="mosh mlta_15@r2d2.cl.uzh.ch"
+alias kaldi="ssh tannon@172.23.129.113" # no mosh on instance
+# alias rattle="ssh tkew@rattle.ifi.uzh.ch" 
+alias rattle="ssh kew@rattle.ifi.uzh.ch"
+alias kaldigpu="ssh tannon@172.23.23.3"
+alias kaldigpu2="ssh tannon@172.23.24.138"
+alias s3it="ssh tkew@cluster.s3it.uzh.ch"
+
+## monitor GPU activities in a 'htop' fashion
+
+alias gtop="watch --color -n 2 /mnt/storage/clfiles/resources/bin/gpustat.py"
+
+# assign GPU
+alias gpu0="CUDA_VISIBLE_DEVICES=0"
+alias gpu1="CUDA_VISIBLE_DEVICES=1"
+alias gpu2="CUDA_VISIBLE_DEVICES=2"
+alias gpu3="CUDA_VISIBLE_DEVICES=3"
+alias gpu4="CUDA_VISIBLE_DEVICES=4"
+alias gpu5="CUDA_VISIBLE_DEVICES=5"
+alias gpu6="CUDA_VISIBLE_DEVICES=6"
+
+## get rid of command not found ##
+alias cd..="cd .."
+## a quick way to get out of current directory ##
+alias ..="cd .."
+alias ...="cd ../../"
+alias ....="cd ../../../"
+alias .....="cd ../../../../"
+# alias .4="cd ../../../../"
+# alias .5="cd ../../../../.."
+
+# make directory if doesn't exist as default (verbose)
+alias mkdir="mkdir -pv"
+
+# use vim by default
+alias vi="vim"
+
+## listings
+## Colorize the ls output ##
+alias ls="ls -G"
+# alias ls="ls --color=auto"
+# alias ls="ls --color=auto --group-directories-first"
+
+## Use a long listing format ##
+alias ll="ls -laG"
+alias sl="ls"
+alias ltr="ls -ltr"
+
+# quick clear
+alias c="clear"
+
+# --------
+# anaconda
+# --------
+
+# alias ana="source ~/.conda.bashrc"
+alias a="source ~/.conda_init"
+alias ana="source ~/.conda_init"
+alias anaconda="source ~/.conda_init"
+alias envs="conda env list"
+
+# ---------
+# Functions
+# ---------
+
+# quick activate conda env
+function go(){
+	source activate $1
+}
+# change dir and list
+function cdd() {
+    cd $1
+    ls
+}
+# clear and list current dir
+function cl() {
+    clear
+    ls
+}
+# count files in a directory
+function fcount() {
+    ls "$@" | wc -l
+}
+# mount remote dir
+#function mount() {
+#	sshfs kew@midgard.ifi.uzh.ch:$1 /Users/tannon/sshfs
+#}
