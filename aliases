@@ -16,6 +16,9 @@ alias rattle="ssh kew@rattle.ifi.uzh.ch"
 alias kaldigpu="ssh tannon@172.23.23.3"
 alias kaldigpu2="ssh tannon@172.23.24.138"
 alias s3it="ssh tkew@cluster.s3it.uzh.ch"
+alias ifi="ssh kew@home.ifi.uzh.ch"
+alias respondelligent="ssh tannon@185.46.59.56"
+alias readvisor_s3it="ssh ubuntu@172.23.82.206"
 
 ## monitor GPU activities in a 'htop' fashion
 

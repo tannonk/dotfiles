@@ -3,6 +3,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/Applications/anaconda3/bin:$PATH
 export PYTHON_UTILS="$HOME/code/python/utils"
 export PATH="$PYTHON_UTILS:$PATH"
+export PATH=${PATH}:/usr/local/mysql/bin # add sql
 
 # locale settings #
 export LC_ALL=en_US.UTF-8
